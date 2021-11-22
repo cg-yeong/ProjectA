@@ -13,15 +13,14 @@ import RxCocoa
 
 class SocketManage: NSObject {
     
-    let manager = SocketManager(socketURL: URL(string: "https://devsol6.club5678.com:5555")!,
+    let sioManager = SocketManager(socketURL: URL(string: "https://devsol6.club5678.com:5555")!,
                                 config: [.reconnects(false)])
     
     var socket: SocketIOClient!
     
     override init() {
         super.init()
-        socket = manager.socket(forNamespace: "/")
-        
+        socket = sioManager.socket(forNamespace: "/")
         print("소켓 초기화")
     }
     
@@ -45,19 +44,14 @@ class SocketManage: NSObject {
                                     "chat_name" : SocialEmail.shared.name!,
                                     "mem_photo" : SocialEmail.shared.profile ?? "https://pida83.gabia.io/storage/QrrC86m3Nl3htEQruFbeSb5UpTNQyp8o8Op72pRY.png"]
         
-            
-        self.socket.emitWithAck("message", user).timingOut(after: 0) { dataArr in
-            let jsonData = JSON(dataArr.first!)
-            print(jsonData)
+        self.socket.emitWithAck("message", user).timingOut(after: 0) { data in
+            let jsonData = JSON(data.first!)
             let issuc = jsonData["success"].rawString()
-            print(issuc)
+            print(issuc ?? "")
             guard issuc == "y" else {
                 return
             }
         }
-            
-            
-           
     }
     
     func reqRoomOut() {
@@ -68,8 +62,8 @@ class SocketManage: NSObject {
     }
     
     func sendChat(text: String) {
-        let want = ["cmd" : "sendChatMsg", "msg" : text]
-        socket.emit("message", want)
+        socket.emit("message", ["cmd" : "sendChatMsg",
+                                "msg" : text])
     }
     
     func sendLike() {

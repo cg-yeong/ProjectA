@@ -8,16 +8,41 @@
 import Foundation
 import UIKit
 
+class CustomFlowLayout: UICollectionViewFlowLayout {
+    
+}
+
 extension Broadcast: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func setCollectionView() {
         msgCollectionView.delegate = self
         msgCollectionView.dataSource = self
-        msgCollectionView.register(UINib(nibName: "Message", bundle: nil), forCellWithReuseIdentifier: "msg")
-        msgCollectionView.register(UINib(nibName: "SystemMessage", bundle: nil), forCellWithReuseIdentifier: "sysMsg")
-
+        msgCollectionView.register(UINib(nibName: "ChatCell", bundle: nil), forCellWithReuseIdentifier: "userchat")
+        msgCollectionView.register(UINib(nibName: "SystemCell", bundle: nil), forCellWithReuseIdentifier: "system")
+//        msgCollectionView.register(UINib(nibName: "Message", bundle: nil), forCellWithReuseIdentifier: "msg")
+//        msgCollectionView.register(UINib(nibName: "SystemMessage", bundle: nil), forCellWithReuseIdentifier: "sysMsg")
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 4.0
+        flowLayout.estimatedItemSize = CGSize(width: msgCollectionView.frame.width, height: 70)
+        msgCollectionView.collectionViewLayout = flowLayout
+        msgCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        
+        
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.size.width
+        switch liveChat[indexPath.row].cmd {
+        case "rcvChatMsg":
+            return CGSize(width: width, height: 70)
+        case "rcvSystemMsg":
+            return CGSize(width: width, height: 30)
+        default:
+            return CGSize(width: width, height: 0)
+        }
+    }
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return liveChat.count
@@ -28,28 +53,24 @@ extension Broadcast: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         // 컬렉션 뷰 뒤집기
         collectionView.transform = CGAffineTransform(scaleX: 1, y: -1)
         let broadChat = liveChat[indexPath.row]
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "msg", for: indexPath) as? Message, broadChat.cmd == "rcvChatMsg" {
-            
-            cell.delegate = self
-            cell.idx = indexPath.row
-            cell.chatName.text = broadChat.from?["chat_name"] as? String
-            cell.chatContents.text = broadChat.msg!
-            cell.chatProfile.kf.setImage(with: URL(string: broadChat.from?["mem_photo"] as! String))
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userchat", for: indexPath) as? ChatCell, broadChat.cmd == "rcvChatMsg" {
+            cell.frame.size.width = msgCollectionView.bounds.width
+            cell.name.text = broadChat.from?["chat_name"] as? String
+            cell.chat.text = broadChat.msg!
             
             cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
             return cell
         }
-        if let sysCell = collectionView.dequeueReusableCell(withReuseIdentifier: "sysMsg", for: indexPath) as? SystemMessage, broadChat.cmd == "rcvSystemMsg" {
-            sysCell.clipsToBounds = true
-            sysCell.layer.cornerRadius = 4
+        if let sysCell = collectionView.dequeueReusableCell(withReuseIdentifier: "system", for: indexPath) as? SystemCell, broadChat.cmd == "rcvSystemMsg" {
             
-            sysCell.sysMsg.text = broadChat.msg
+            sysCell.message.text = broadChat.msg
             
             sysCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
             return sysCell
         }
         return UICollectionViewCell()
     }
+    
     
     
     func scrollToBottom() {

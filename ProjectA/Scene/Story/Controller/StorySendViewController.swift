@@ -25,6 +25,7 @@ class StorySendViewController: UIViewController {
     
     var txtCount: Int = 0
     var newLineCount = 0
+    var bj_id = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,11 +98,11 @@ class StorySendViewController: UIViewController {
             // 이제 전송 가능
             self.view.isUserInteractionEnabled = false
             let param: [String : Any] = [
-                "bj_id" : "geunyeong",
-                "send_mem_gender" : "F",
-                "send_chat_name" : "카리나2",
-                "send_mem_photo" : "",
-                "send_mem_no" : "25",
+                "bj_id" : bj_id,
+                "send_mem_gender" : SocialEmail.shared.gender!,
+                "send_chat_name" : SocialEmail.shared.name!,
+                "send_mem_photo" : SocialEmail.shared.profile!,
+                "send_mem_no" : 25,
                 "story_conts" : inputStoryTextView.text!
             ]
             
@@ -177,7 +178,7 @@ extension StorySendViewController {
     func sendStoryAPI(_ parameter: Parameters) {
         let urlString: String = "https://pida83.gabia.io/api/story"
         // 전송중 체크
-        Alamofire.request(URL(string: urlString)!, method: .post, parameters: parameter, encoding: JSONEncoding.prettyPrinted, headers: nil).responseJSON { [self] response in
+        AF.request(URL(string: urlString)!, method: .post, parameters: parameter, encoding: JSONEncoding.prettyPrinted, headers: nil).responseJSON { [self] response in
             
             switch response.result {
             case .success(_):
@@ -197,16 +198,16 @@ extension StorySendViewController {
     func findRootVCAndShowToast() {
         let presentVC = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
         if presentVC != nil {
-            presentVC?.view.showToast(message: ToastMessage.success.rawValue, keyboardStatus: keyboardConstraint.constant)
+            Toast.show(" 사연을 성공적으로 보냈습니다. ")
         }
     }
     
 }
-
-
 // MARK: 그라데이션..
-let gradient: CAGradientLayer = CAGradientLayer()
+let gradient: CAGradientLayer = CAGradientLayer() // -> 차라리 클래스 만들어서 static 변수로 빼자
+
 extension UIView {
+    
     func setGradient(color1: UIColor, color2: UIColor) {
         gradient.colors = [color1.cgColor, color2.cgColor]
         gradient.locations = [0.0, 1.0]
@@ -216,7 +217,6 @@ extension UIView {
         layer.insertSublayer(gradient, at: 0)
         layer.masksToBounds = true
         self.layoutIfNeeded()
-        
     }
     // MARK: 토스트 메세지
     func showToast(message: String, keyboardStatus: CGFloat) {

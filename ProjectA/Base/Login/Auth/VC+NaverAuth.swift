@@ -60,6 +60,10 @@ extension ViewController: NaverThirdPartyLoginConnectionDelegate {
         }
     }
     
+    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailAuthorizationWithRecieveType receiveType: THIRDPARTYLOGIN_RECEIVE_TYPE) {
+        
+    }
+    
     func getNaverInfo() {
         guard let isValidAccessToken = naverLoginIns?.isValidAccessTokenExpireTimeNow() else { return }
         if !isValidAccessToken { return }

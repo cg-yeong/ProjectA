@@ -11,7 +11,7 @@ import UIKit
 class SystemMessage: UICollectionViewCell {
     
     @IBOutlet weak var sysMsgView: UIView!
-    @IBOutlet weak var sysMsg: UILabel!
+    @IBOutlet weak var message: UILabel!
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

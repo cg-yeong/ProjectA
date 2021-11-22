@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,18 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ProjectA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJi-nW-QTB">
-                                <rect key="frame" x="109.5" y="433" width="195" height="30"/>
-                                <state key="normal" title="프로필프로필프로필프로필프로필"/>
-                                <connections>
-                                    <action selector="showMMiniProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Tj-b4-ma4"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twi-gl-Mlv">
-                                <rect key="frame" x="109.5" y="499.5" width="195" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twi-gl-Mlv">
+                                <rect key="frame" x="90" y="385" width="195" height="30"/>
                                 <state key="normal" title="프로필프로필프로필프로필프로필">
                                     <color key="titleColor" systemColor="systemPinkColor"/>
                                 </state>
@@ -33,31 +26,25 @@
                                     <action selector="showFMiniProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XmN-ck-dT7"/>
                                 </connections>
                             </button>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfM-Bm-IHu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJi-nW-QTB">
+                                <rect key="frame" x="90" y="318.5" width="195" height="30"/>
+                                <state key="normal" title="프로필프로필프로필프로필프로필"/>
+                                <connections>
+                                    <action selector="showMMiniProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Tj-b4-ma4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YfM-Bm-IHu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AqT-Gs-u9Y"/>
                             <constraint firstItem="YJi-nW-QTB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Sxd-A9-eWh"/>
-                            <constraint firstItem="YfM-Bm-IHu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XMI-jR-4gl"/>
                             <constraint firstItem="twi-gl-Mlv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZqW-N5-48g"/>
                             <constraint firstItem="twi-gl-Mlv" firstAttribute="top" secondItem="YJi-nW-QTB" secondAttribute="bottom" constant="36.5" id="gzg-U3-qEX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YfM-Bm-IHu" secondAttribute="bottom" id="hG1-4H-8Mk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YfM-Bm-IHu" secondAttribute="trailing" id="vFm-8I-ntW"/>
                             <constraint firstItem="YJi-nW-QTB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x5e-Jz-os0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="manprofileButton" destination="YJi-nW-QTB" id="tLL-dK-OWJ"/>
-                        <outlet property="wkWebView" destination="YfM-Bm-IHu" id="hmg-w7-GW5"/>
                         <outlet property="womanprofileButton" destination="twi-gl-Mlv" id="x53-wd-Yvr"/>
                     </connections>
                 </viewController>

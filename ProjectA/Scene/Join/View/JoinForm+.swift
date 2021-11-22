@@ -80,7 +80,7 @@ extension JoinForm {
     func memberRegister(with model: User) {
         // joinButton에서 호출
         
-        let path = "https://pida83.gabia.io/api/member"
+        let path = "https://babyhoney.kr/api/member"
         let headers: HTTPHeaders = [
             "Content-Type" : "multipart/form-data"
         ]

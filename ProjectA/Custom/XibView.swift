@@ -7,19 +7,30 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class XibView: UIView {
     
+    var viewData: JSON = JSON()
     var initCheck = true
+    
+    
+    required init(frame: CGRect, viewData : JSON) {
+        super.init(frame: frame)
+        self.viewData = viewData
+        self.tag = 555
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        self.commonInit()
+        self.tag = 555
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
+        self.commonInit()
+        self.tag = 555
     }
     
     

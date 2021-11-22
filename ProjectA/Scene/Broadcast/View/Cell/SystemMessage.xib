@@ -1,51 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Message" customModule="ProjectA" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sysMsg" id="sQ4-DW-roC" customClass="SystemMessage" customModule="ProjectA" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="27.666666666666668"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2gc-Yg-kU3">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="27.666666666666668"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="sysMsg" id="sQ4-DW-roC" customClass="SystemMessage" customModule="ProjectA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="2gc-Yg-kU3">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw4-VJ-cmz">
-                        <rect key="frame" x="20" y="0.0" width="335" height="27.666666666666668"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcG-Oj-Dlc">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="28"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복한데이지팬이야 님이 방송에 입장하였습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYq-8Z-Hku">
-                                <rect key="frame" x="10" y="5" width="315" height="18.333333333333332"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.88235294119999996" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw4-VJ-cmz">
+                                <rect key="frame" x="0.0" y="0.0" width="271" height="28"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복한데이지팬이야 님이 방송에 입장하였습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYq-8Z-Hku">
+                                        <rect key="frame" x="10" y="5" width="251" height="18.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="0.88235294119999996" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="iYq-8Z-Hku" secondAttribute="trailing" constant="10" id="9q2-mY-Eoj"/>
+                                    <constraint firstAttribute="bottom" secondItem="iYq-8Z-Hku" secondAttribute="bottom" constant="4.5" id="GT2-8d-q9D"/>
+                                    <constraint firstItem="iYq-8Z-Hku" firstAttribute="leading" secondItem="cw4-VJ-cmz" secondAttribute="leading" constant="10" id="dmn-3p-V4s"/>
+                                    <constraint firstItem="iYq-8Z-Hku" firstAttribute="top" secondItem="cw4-VJ-cmz" secondAttribute="top" constant="5" id="eYB-Wx-zmv"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="iYq-8Z-Hku" secondAttribute="trailing" constant="10" id="9q2-mY-Eoj"/>
-                            <constraint firstAttribute="bottom" secondItem="iYq-8Z-Hku" secondAttribute="bottom" constant="4.5" id="GT2-8d-q9D"/>
-                            <constraint firstItem="iYq-8Z-Hku" firstAttribute="leading" secondItem="cw4-VJ-cmz" secondAttribute="leading" constant="10" id="dmn-3p-V4s"/>
-                            <constraint firstItem="iYq-8Z-Hku" firstAttribute="top" secondItem="cw4-VJ-cmz" secondAttribute="top" constant="5" id="eYB-Wx-zmv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cw4-VJ-cmz" secondAttribute="trailing" id="K1a-wr-kyN"/>
+                            <constraint firstAttribute="bottom" secondItem="cw4-VJ-cmz" secondAttribute="bottom" id="M4S-WS-0h8"/>
+                            <constraint firstAttribute="width" constant="280" id="oEM-vg-u9N"/>
+                            <constraint firstItem="cw4-VJ-cmz" firstAttribute="leading" secondItem="hcG-Oj-Dlc" secondAttribute="leading" id="ol2-EK-jYD"/>
+                            <constraint firstItem="cw4-VJ-cmz" firstAttribute="top" secondItem="hcG-Oj-Dlc" secondAttribute="top" id="qXp-tj-bsW"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="cw4-VJ-cmz" firstAttribute="leading" secondItem="2gc-Yg-kU3" secondAttribute="leading" constant="20" id="HLX-VM-dfJ"/>
-                    <constraint firstAttribute="trailing" secondItem="cw4-VJ-cmz" secondAttribute="trailing" constant="20" id="Uaq-ho-pTs"/>
-                    <constraint firstAttribute="bottom" secondItem="cw4-VJ-cmz" secondAttribute="bottom" id="ch0-36-sWx"/>
-                    <constraint firstItem="cw4-VJ-cmz" firstAttribute="top" secondItem="2gc-Yg-kU3" secondAttribute="top" id="iiF-z7-2Xz"/>
+                    <constraint firstItem="hcG-Oj-Dlc" firstAttribute="leading" secondItem="2gc-Yg-kU3" secondAttribute="leading" id="3sa-Pi-cT2"/>
+                    <constraint firstAttribute="trailing" secondItem="hcG-Oj-Dlc" secondAttribute="trailing" id="8cI-Yn-ex4"/>
+                    <constraint firstItem="hcG-Oj-Dlc" firstAttribute="top" secondItem="2gc-Yg-kU3" secondAttribute="top" id="dqL-3d-4pD"/>
+                    <constraint firstAttribute="bottom" secondItem="hcG-Oj-Dlc" secondAttribute="bottom" id="ssU-aq-tRK"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="399" height="73"/>
             <connections>
-                <outlet property="sysMsg" destination="iYq-8Z-Hku" id="IIG-LL-qvd"/>
+                <outlet property="message" destination="iYq-8Z-Hku" id="IIG-LL-qvd"/>
                 <outlet property="sysMsgView" destination="cw4-VJ-cmz" id="bZf-x0-sdu"/>
             </connections>
             <point key="canvasLocation" x="371.73913043478262" y="140.29017857142856"/>

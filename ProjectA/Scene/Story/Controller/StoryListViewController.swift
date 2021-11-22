@@ -47,7 +47,6 @@ class StoryListViewController: UIViewController, UITableViewDelegate {
             let overDay = timeGap.day ?? 0
             let overHour = timeGap.hour ?? 0
             let overMinute = timeGap.minute ?? 0
-            
             if overDay > 0 {
                 resultTimeString = "오래전"
             } else {
@@ -75,17 +74,22 @@ class StoryListViewController: UIViewController, UITableViewDelegate {
     func beginPaging() {
         
         isPaging = true
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.pageNum += 1
-            self.paging()
+        DispatchQueue.main.asyncAfter(deadline: .now()) { [self] in
+            pageNum += 1
+            paging()
             
         }
     }
     func paging() {
         
         let urlString: String = "https://pida83.gabia.io/api/story/page/\(pageNum)"
-        let parameter: Parameters = ["bj_id" : "geunyeong"]
-        Alamofire.request(URL(string: urlString)!, method: .get, parameters: parameter, encoding: URLEncoding.queryString, headers: nil).responseData { [self] response in
+        let parameter: Parameters = ["bj_id" : "근영을"]
+        AF.request(URL(string: urlString)!,
+                   method: .get,
+                   parameters: parameter,
+                   encoding: URLEncoding.queryString,
+                   headers: nil)
+            .responseData { [self] response in
             switch response.result {
             case .success(let data):
                 let decoder = JSONDecoder()
@@ -106,12 +110,12 @@ class StoryListViewController: UIViewController, UITableViewDelegate {
                     }
                 } catch {
                     print("Data Not Found")
-                    self.isPaging = false
+                    isPaging = false
                 }
             case .failure(_):
                 print(Error.self)
                 print("alamofire request failure")
-                self.isPaging = false
+                isPaging = false
             }
         }
     }

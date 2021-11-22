@@ -12,7 +12,6 @@ import RxCocoa
 
 class Broadcast: UIViewController {
     
-    @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var liveHeader: UIView!
     @IBOutlet weak var chatView: UIView!
     @IBOutlet weak var liveView: UIView!
@@ -33,6 +32,7 @@ class Broadcast: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.layoutIfNeeded()
         setView()
         setCollectionView()
         setTextView()

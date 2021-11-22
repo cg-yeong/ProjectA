@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         KakaoSDKCommon.initSDK(appKey: "d9430748c9e1358dd25f36a148e0a81f")
-        
+
         let naver = NaverThirdPartyLoginConnection.getSharedInstance()
         // 네이버 앱으로 인증하는 방식을 활성화
         naver?.isNaverAppOauthEnable = true
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         naver?.isInAppOauthEnable = true
         // 인증화면을 세로모드에서만 활성화
         naver?.isOnlyPortraitSupportedInIphone()
-        
+
         // 네이버 아이디로 로그인하기 설정
         // 애플리케이션을 등록할 때 입력한 URL Scheme
         naver?.serviceUrlScheme = kServiceAppUrlScheme
@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         naver?.consumerKey = kConsumerKey
         naver?.consumerSecret = kConsumerSecret
         naver?.appName = kServiceAppName
+
         return true
     }
     

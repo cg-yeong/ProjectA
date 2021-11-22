@@ -1,18 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoView" customModule="ProjectA" customModuleProvider="target">
+            <connections>
+                <outlet property="closeBtn" destination="glW-b8-lbu" id="hCL-qR-tVb"/>
+                <outlet property="index_label" destination="uAV-1a-lcD" id="mKM-zN-rp7"/>
+                <outlet property="photos_imageView" destination="jMR-9J-cgR" id="4CU-UI-dmQ"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glW-b8-lbu">
+                    <rect key="frame" x="36" y="25" width="30" height="30"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="btnBroadCls"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-1a-lcD">
+                    <rect key="frame" x="176.5" y="25" width="22" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMR-9J-cgR">
+                    <rect key="frame" x="16" y="162" width="343" height="343"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jMR-9J-cgR" secondAttribute="height" multiplier="1:1" id="XCy-tj-XD3"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="jMR-9J-cgR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="7T8-dY-8v4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jMR-9J-cgR" secondAttribute="trailing" constant="16" id="96G-DE-cvk"/>
+                <constraint firstItem="uAV-1a-lcD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Pg-KC-MgL"/>
+                <constraint firstItem="jMR-9J-cgR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="C30-LX-yCY"/>
+                <constraint firstItem="glW-b8-lbu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="I1e-VC-PMj"/>
+                <constraint firstItem="uAV-1a-lcD" firstAttribute="centerY" secondItem="glW-b8-lbu" secondAttribute="centerY" id="N3o-b2-7mu"/>
+                <constraint firstItem="uAV-1a-lcD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="QgZ-fc-VE9"/>
+                <constraint firstItem="jMR-9J-cgR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dy9-UZ-jEw"/>
+                <constraint firstItem="glW-b8-lbu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="36" id="psI-i6-SfC"/>
+            </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
+    <resources>
+        <image name="btnBroadCls" width="30" height="30"/>
+    </resources>
 </document>

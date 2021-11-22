@@ -25,11 +25,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNl-ob-MIn">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pxi-TY-QS4">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pxi-TY-QS4">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TSh-pP-HLr">
-                                                    <size key="itemSize" width="375" height="128"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="TSh-pP-HLr">
+                                                    <size key="itemSize" width="375" height="30"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -127,14 +127,6 @@
                                     <constraint firstItem="0ao-8D-3dF" firstAttribute="top" secondItem="6Xr-Wy-Rfp" secondAttribute="bottom" constant="10" id="oIG-Qy-tJe"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av1-rq-epR">
-                                <rect key="frame" x="0.0" y="74.5" width="375" height="48"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="bIa-66-cDL"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd5-Vl-1ex" userLabel="Header">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                 <subviews>
@@ -160,16 +152,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="av1-rq-epR" secondAttribute="trailing" id="0AY-2O-PRe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="jnN-Cf-Cgu" secondAttribute="bottom" id="56D-ac-JRl"/>
                             <constraint firstItem="Y4i-yB-dtt" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="9QL-ae-b97"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jnN-Cf-Cgu" secondAttribute="trailing" id="B0e-w3-tZ4"/>
                             <constraint firstItem="Y4i-yB-dtt" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="IGS-ns-Hr5"/>
-                            <constraint firstItem="av1-rq-epR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Joy-xE-cF0"/>
                             <constraint firstAttribute="bottom" secondItem="Y4i-yB-dtt" secondAttribute="bottom" id="Kv5-vh-WWY"/>
                             <constraint firstItem="Wd5-Vl-1ex" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="OWH-K0-JfY"/>
                             <constraint firstItem="jnN-Cf-Cgu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SXL-PY-2Fd"/>
-                            <constraint firstItem="av1-rq-epR" firstAttribute="top" secondItem="Wd5-Vl-1ex" secondAttribute="bottom" id="VeW-po-0GR"/>
                             <constraint firstAttribute="trailing" secondItem="Y4i-yB-dtt" secondAttribute="trailing" id="Yzf-0b-3AM"/>
                             <constraint firstItem="jnN-Cf-Cgu" firstAttribute="top" secondItem="Wd5-Vl-1ex" secondAttribute="bottom" id="dMY-1G-9vl"/>
                             <constraint firstItem="Wd5-Vl-1ex" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="mRg-4C-CZ4"/>
@@ -177,7 +166,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blurView" destination="av1-rq-epR" id="D7q-fs-4kv"/>
                         <outlet property="chatView" destination="0ao-8D-3dF" id="Iji-NX-jic"/>
                         <outlet property="closeButton" destination="3qU-Ov-d8I" id="JNs-LQ-xMd"/>
                         <outlet property="keyboardConstraint" destination="56D-ac-JRl" id="nDS-dR-muh"/>

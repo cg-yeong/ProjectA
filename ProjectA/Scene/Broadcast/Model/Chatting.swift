@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Chat {
+    var cmd: String?
+    var msg: String?
+    var from: [String : Any]?
+}

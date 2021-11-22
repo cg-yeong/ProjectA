@@ -13,7 +13,7 @@ struct Member: Decodable {
     let code: Int
     let is_member: Bool
     let msg: String
-    let redirect_url: String?
+    let redirect_url: String
     
     enum CodingKeys: String, CodingKey {
         case mem_info

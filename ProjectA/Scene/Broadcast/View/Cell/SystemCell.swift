@@ -5,4 +5,9 @@
 //  Created by inforex on 2021/11/19.
 //
 
-import Foundation
+import UIKit
+
+class SystemCell: UICollectionViewCell {
+    
+    @IBOutlet weak var message: UILabel!
+}
