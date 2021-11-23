@@ -70,7 +70,7 @@ class SocketManage: NSObject {
         socket.emit("message", ["cmd" : "sendLike"])
     }    
     
-    func rcv() {
+    func rcv(_ completion: ((Any) -> Void)? = nil) {
         
         socket.on("message") { (dataArr, ack) in
             print("-- 리시브 메시지 --, 타입 : \(type(of: dataArr))") // 1
@@ -80,17 +80,30 @@ class SocketManage: NSObject {
             print("---")
             
             switch cmds {
-            case "rcvChatMsg", "rcvSystemMsg":
+            case "rcvChatMsg":
                 var pchat = Chat()
                 pchat.cmd = cmds!
                 pchat.msg = datadic["msg"].rawString()!
                 pchat.from = datadic["from"].rawValue as? [String : Any]
-                
                 guard let bvc = App.visibleViewController() as? Broadcast else {
                     return
                 }
                 bvc.liveChat.insert(pchat, at: 0)
                 bvc.msgCollectionView.reloadData()
+                bvc.msgCollectionView.layoutIfNeeded()
+                
+            case "rcvSystemMsg":
+                var schat = Chat()
+                schat.cmd = cmds!
+                schat.msg = datadic["msg"].stringValue
+                
+                guard let bvc = App.visibleViewController() as? Broadcast else {
+                    return
+                }
+                bvc.liveChat.insert(schat, at: 0)
+                bvc.msgCollectionView.reloadData()
+                bvc.msgCollectionView.layoutIfNeeded()
+                
                 
             case "rcvRoomOut":
                 guard let vc = App.visibleViewController() else {

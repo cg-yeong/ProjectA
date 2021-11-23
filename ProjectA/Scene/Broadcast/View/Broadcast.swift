@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 class Broadcast: UIViewController {
     
@@ -26,18 +27,30 @@ class Broadcast: UIViewController {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     
+    lazy var likeBtnLottie: AnimationView = {
+        let view = AnimationView()
+        return view
+    }()
+    
     let socket = SocketManage()
     var liveChat = [Chat]()
     let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layoutIfNeeded()
         setView()
         setCollectionView()
         setTextView()
         bind()
         socket.rcv()
+//        socket.rcv { data in
+//            guard let chatData = data as? Chat else {
+//                return
+//            }
+//            self.liveChat.insert(chatData, at: 0)
+//            self.msgCollectionView.reloadData()
+//            self.msgCollectionView.layoutIfNeeded()
+//        }
     }
     
     // set
@@ -45,6 +58,9 @@ class Broadcast: UIViewController {
         msgView.cornerRadius = 18
         msgView.clipsToBounds = true
         setBlur()
+        setLikeLottie()
+        likeButton.isEnabled = true
+        likeBtnAnimation(true)
     }
     
     override func viewDidLayoutSubviews() {

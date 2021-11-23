@@ -12,13 +12,13 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="system" id="AmA-a6-uAd" customClass="SystemCell" customModule="ProjectA" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4zs-zd-eNi">
                 <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwe-8P-eC3">
-                        <rect key="frame" x="20" y="3" width="204" height="24"/>
+                        <rect key="frame" x="20" y="3" width="203.5" height="24"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수박바 님이 방송에 입장하였습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3k-5G-AuP">
                                 <rect key="frame" x="10" y="5" width="183.5" height="14"/>

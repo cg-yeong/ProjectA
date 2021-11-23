@@ -43,7 +43,6 @@ extension Broadcast: UITextViewDelegate {
     @objc func keyboardWillHide(_ sender: Notification) {
         keyboardConstraint.constant = 0
         self.view.layoutIfNeeded()
-        print("키보드 내리기 : \(keyboardConstraint.constant)")
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

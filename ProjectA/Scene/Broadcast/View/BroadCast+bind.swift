@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 extension Broadcast {
     
@@ -72,12 +73,34 @@ extension Broadcast {
 
     func likeEvent() {
         socket.sendLike()
-        view.viewWithTag(300)?.removeFromSuperview()
+        
         likeButton.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
+        likeBtnAnimation(false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.likeButton.isEnabled = true
+            self.likeBtnAnimation(true)
         }
-        LottieAnime().setLikeAnimation()
     }
     
+    
+    /* 좋아요 로티 처음 세팅 */
+    func setLikeLottie() {
+        likeBtnLottie = AnimationView(name: "ani_live_like_full")
+        
+        likeBtnLottie.frame = likeButton.bounds
+        likeBtnLottie.contentMode = .scaleAspectFit
+        likeBtnLottie.isUserInteractionEnabled = false
+        likeBtnLottie.loopMode = .playOnce
+        likeBtnLottie.tag = 300
+        self.likeButton.addSubview(likeBtnLottie)
+        
+    }
+    
+    @objc func likeBtnAnimation(_ on: Bool) {
+        guard on else {
+            likeBtnLottie.stop()
+            return
+        }
+        likeBtnLottie.play()
+    }
 }

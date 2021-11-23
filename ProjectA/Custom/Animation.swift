@@ -12,33 +12,6 @@ import SDWebImageWebPCoder
 
 class LottieAnime {
     
-    func setLikeAnimation() {
-        let aniView = AnimationView(name: "ani_live_like_full")
-        guard let vc = App.visibleViewController() as? Broadcast else {
-            return
-        }
-        
-        aniView.center = vc.view.center
-        aniView.contentMode = .scaleAspectFit
-        aniView.frame = vc.likeButton.bounds
-        aniView.tag = 300
-        aniView.isUserInteractionEnabled = false
-        if !vc.likeButton.isEnabled {
-            aniView.removeFromSuperview()
-        }
-        aniView.play(fromProgress: aniView.currentProgress, toProgress: 1, loopMode: .loop) { (f) in
-            
-            if f {
-                aniView.removeFromSuperview()
-            }
-        }
-        
-        vc.likeButton.clipsToBounds = false
-        vc.likeButton.addSubview(aniView)
-        
-    }
-    
-    
     func heartAnimation() {
         
         // webp

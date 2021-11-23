@@ -17,15 +17,20 @@ class ChatCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        profile.layer.cornerRadius = 18
         self.chat.sizeToFit()
         self.layoutIfNeeded()
     }
     
-    
-    
     override func prepareForReuse() {
         super.prepareForReuse()
+        profile.image = nil
     }
     
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        let targetSize = CGSize(width: layoutAttributes.frame.width, height: 0)
+        layoutAttributes.frame.size = contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+        return layoutAttributes
+    }
     
 }
