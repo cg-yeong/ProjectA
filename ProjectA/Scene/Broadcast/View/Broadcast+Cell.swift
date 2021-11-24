@@ -21,6 +21,12 @@ extension Broadcast: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         msgCollectionView.register(UINib(nibName: "ChatCell", bundle: nil), forCellWithReuseIdentifier: "userchat")
         msgCollectionView.register(UINib(nibName: "SystemCell", bundle: nil), forCellWithReuseIdentifier: "system")
         
+//        let flowLayout = UICollectionViewFlowLayout()
+//        flowLayout.minimumLineSpacing = 4.0
+//        flowLayout.estimatedItemSize = CGSize(width: msgCollectionView.frame.width, height: 70)
+//        msgCollectionView.collectionViewLayout = flowLayout
+//        msgCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        
         let chatFlowLayout = ChatFlowLayout()
         chatFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         chatFlowLayout.minimumLineSpacing = 4.0
