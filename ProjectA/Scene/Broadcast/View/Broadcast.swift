@@ -43,14 +43,6 @@ class Broadcast: UIViewController {
         setTextView()
         bind()
         socket.rcv()
-//        socket.rcv { data in
-//            guard let chatData = data as? Chat else {
-//                return
-//            }
-//            self.liveChat.insert(chatData, at: 0)
-//            self.msgCollectionView.reloadData()
-//            self.msgCollectionView.layoutIfNeeded()
-//        }
     }
     
     // set

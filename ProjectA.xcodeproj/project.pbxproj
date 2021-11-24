@@ -35,6 +35,16 @@
 		6665436627477826005F0153 /* SystemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6665436527477826005F0153 /* SystemCell.xib */; };
 		6665436827477937005F0153 /* SystemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665436727477937005F0153 /* SystemCell.swift */; };
 		6665436A274C7ECA005F0153 /* ChatFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654369274C7ECA005F0153 /* ChatFlowLayout.swift */; };
+		6665436C274CC8BE005F0153 /* JoinForm+bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665436B274CC8BE005F0153 /* JoinForm+bind.swift */; };
+		66654370274CCDB9005F0153 /* StorySendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6665436F274CCDB9005F0153 /* StorySendView.xib */; };
+		66654372274CD466005F0153 /* StorySendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654371274CD466005F0153 /* StorySendView.swift */; };
+		66654374274CE1E7005F0153 /* StorySendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654373274CE1E7005F0153 /* StorySendViewModel.swift */; };
+		66654376274DDB3B005F0153 /* StorySendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654375274DDB3B005F0153 /* StorySendModel.swift */; };
+		66654378274E15C0005F0153 /* StorySendViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654377274E15C0005F0153 /* StorySendViewModel+.swift */; };
+		6665437A274E163A005F0153 /* StorySendView+bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654379274E163A005F0153 /* StorySendView+bind.swift */; };
+		6665437C274E1657005F0153 /* SendStoryView+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665437B274E1657005F0153 /* SendStoryView+Text.swift */; };
+		66654381274E172E005F0153 /* StoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66654380274E172E005F0153 /* StoryListView.xib */; };
+		66654384274E2075005F0153 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66654383274E2075005F0153 /* StoryCell.xib */; };
 		6666C3972744F42E00746183 /* BroadCast+bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666C3962744F42E00746183 /* BroadCast+bind.swift */; };
 		6666C3A42746114C00746183 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6666C3A32746114C00746183 /* ProfileView.xib */; };
 		667EFE8126B25759008EB475 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667EFE8026B25759008EB475 /* Register.swift */; };
@@ -137,6 +147,16 @@
 		6665436527477826005F0153 /* SystemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemCell.xib; sourceTree = "<group>"; };
 		6665436727477937005F0153 /* SystemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCell.swift; sourceTree = "<group>"; };
 		66654369274C7ECA005F0153 /* ChatFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFlowLayout.swift; sourceTree = "<group>"; };
+		6665436B274CC8BE005F0153 /* JoinForm+bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinForm+bind.swift"; sourceTree = "<group>"; };
+		6665436F274CCDB9005F0153 /* StorySendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorySendView.xib; sourceTree = "<group>"; };
+		66654371274CD466005F0153 /* StorySendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySendView.swift; sourceTree = "<group>"; };
+		66654373274CE1E7005F0153 /* StorySendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySendViewModel.swift; sourceTree = "<group>"; };
+		66654375274DDB3B005F0153 /* StorySendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySendModel.swift; sourceTree = "<group>"; };
+		66654377274E15C0005F0153 /* StorySendViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorySendViewModel+.swift"; sourceTree = "<group>"; };
+		66654379274E163A005F0153 /* StorySendView+bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorySendView+bind.swift"; sourceTree = "<group>"; };
+		6665437B274E1657005F0153 /* SendStoryView+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SendStoryView+Text.swift"; sourceTree = "<group>"; };
+		66654380274E172E005F0153 /* StoryListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryListView.xib; sourceTree = "<group>"; };
+		66654383274E2075005F0153 /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		6666C3962744F42E00746183 /* BroadCast+bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BroadCast+bind.swift"; sourceTree = "<group>"; };
 		6666C3A32746114C00746183 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		667EFE8026B25759008EB475 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -283,12 +303,68 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		6665436D274CCD9F005F0153 /* Send */ = {
+			isa = PBXGroup;
+			children = (
+				6665437F274E169D005F0153 /* Model */,
+				6665437E274E1692005F0153 /* ViewModel */,
+				6665437D274E1685005F0153 /* View */,
+			);
+			path = Send;
+			sourceTree = "<group>";
+		};
+		6665436E274CCDA8005F0153 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				66654382274E2069005F0153 /* Cell */,
+				66654380274E172E005F0153 /* StoryListView.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		6665437D274E1685005F0153 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6665436F274CCDB9005F0153 /* StorySendView.xib */,
+				66654371274CD466005F0153 /* StorySendView.swift */,
+				66654379274E163A005F0153 /* StorySendView+bind.swift */,
+				6665437B274E1657005F0153 /* SendStoryView+Text.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6665437E274E1692005F0153 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				66654373274CE1E7005F0153 /* StorySendViewModel.swift */,
+				66654377274E15C0005F0153 /* StorySendViewModel+.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6665437F274E169D005F0153 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66654375274DDB3B005F0153 /* StorySendModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66654382274E2069005F0153 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				66654383274E2075005F0153 /* StoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		6666C3982744F67400746183 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				661A7D6C26AE43F200600B63 /* JoinForm.xib */,
 				661A7D6A26AE43AA00600B63 /* JoinForm.swift */,
 				66C1F23626B0ECD70089ADCE /* JoinForm+.swift */,
+				6665436B274CC8BE005F0153 /* JoinForm+bind.swift */,
 				66A0902526AF929E000EE259 /* JoinForm+Text.swift */,
 				66C1F22226AFE6840089ADCE /* JoinForm+Picker.swift */,
 				66A0902A26AFCD1B000EE259 /* JoinForm+Image.swift */,
@@ -527,6 +603,8 @@
 		66E78947269C48A9002EF1B6 /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				6665436E274CCDA8005F0153 /* List */,
+				6665436D274CCD9F005F0153 /* Send */,
 				66E78948269C48B6002EF1B6 /* Model */,
 				66E78949269C48BB002EF1B6 /* View */,
 				66E7894A269C48C0002EF1B6 /* Controller */,
@@ -687,13 +765,16 @@
 				66297D0026CCC25300A0F334 /* an_like_03.webp in Resources */,
 				6665436627477826005F0153 /* SystemCell.xib in Resources */,
 				66297D0126CCC25300A0F334 /* an_like_04.webp in Resources */,
+				66654381274E172E005F0153 /* StoryListView.xib in Resources */,
 				66297D0226CCC25300A0F334 /* an_like_05.webp in Resources */,
+				66654384274E2075005F0153 /* StoryCell.xib in Resources */,
 				66E78940269C44D9002EF1B6 /* Story.storyboard in Resources */,
 				66A7BDAB26B8C8E9004F56EE /* Message.xib in Resources */,
 				66AB9DA6268DB39A00F29275 /* LaunchScreen.storyboard in Resources */,
 				66C3067026C0B93C008D7A03 /* SystemMessage.xib in Resources */,
 				663CDB762746356200F8538C /* ProfileImageCell.xib in Resources */,
 				66AB9DA3268DB39A00F29275 /* Assets.xcassets in Resources */,
+				66654370274CCDB9005F0153 /* StorySendView.xib in Resources */,
 				66E78942269C453C002EF1B6 /* StoryCell.xib in Resources */,
 				6608EC4F26C0FB4C00F531B4 /* Broadcast.storyboard in Resources */,
 				661A7D6D26AE43F200600B63 /* JoinForm.xib in Resources */,
@@ -831,6 +912,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66352EF726A7BF6D00469EE4 /* UIView+Inspectable.swift in Sources */,
+				6665437C274E1657005F0153 /* SendStoryView+Text.swift in Sources */,
 				66AB9D9E268DB39800F29275 /* ViewController.swift in Sources */,
 				66352EF526A7BBFC00469EE4 /* ProfileVC+SetMemData.swift in Sources */,
 				66C1F22B26B0139A0089ADCE /* App.swift in Sources */,
@@ -842,7 +924,9 @@
 				66C3067226C0C441008D7A03 /* Message.swift in Sources */,
 				66EF9C0826C207E00082109E /* Broadcast+Cell.swift in Sources */,
 				669EFADA2696D49C000C4DC3 /* DetailPictureCell.swift in Sources */,
+				66654376274DDB3B005F0153 /* StorySendModel.swift in Sources */,
 				66E78950269C49D9002EF1B6 /* StorySendViewController.swift in Sources */,
+				66654378274E15C0005F0153 /* StorySendViewModel+.swift in Sources */,
 				669EFADB2696D49C000C4DC3 /* PictureCell.swift in Sources */,
 				669EFAD2269565A0000C4DC3 /* DetailCollectionViewController.swift in Sources */,
 				663CDB78274635E200F8538C /* ProfileImageCell.swift in Sources */,
@@ -852,11 +936,13 @@
 				66352EFE26A94E8A00469EE4 /* ProfileModel.swift in Sources */,
 				66C1F22D26B014880089ADCE /* Toast.swift in Sources */,
 				66B4F4BD26C4E83900DC248C /* Animation.swift in Sources */,
+				6665436C274CC8BE005F0153 /* JoinForm+bind.swift in Sources */,
 				66B4F4C226CA466100DC248C /* Chatting.swift in Sources */,
 				66AB9D9A268DB39800F29275 /* AppDelegate.swift in Sources */,
 				661A7D6B26AE43AA00600B63 /* JoinForm.swift in Sources */,
 				66A0902626AF929E000EE259 /* JoinForm+Text.swift in Sources */,
 				6666C3972744F42E00746183 /* BroadCast+bind.swift in Sources */,
+				66654374274CE1E7005F0153 /* StorySendViewModel.swift in Sources */,
 				66352F0626A97B7F00469EE4 /* VC+NaverAuth.swift in Sources */,
 				6665436827477937005F0153 /* SystemCell.swift in Sources */,
 				66A0902B26AFCD1B000EE259 /* JoinForm+Image.swift in Sources */,
@@ -867,6 +953,7 @@
 				66EF9C0626C1F1320082109E /* SystemMessage.swift in Sources */,
 				66AB9DCB268DCC8800F29275 /* ProfileViewController.swift in Sources */,
 				66E78952269C49EF002EF1B6 /* StoryCell.swift in Sources */,
+				6665437A274E163A005F0153 /* StorySendView+bind.swift in Sources */,
 				6665436A274C7ECA005F0153 /* ChatFlowLayout.swift in Sources */,
 				667EFE8126B25759008EB475 /* Register.swift in Sources */,
 				66352EFC26A94E4900469EE4 /* StoryModel.swift in Sources */,
@@ -875,6 +962,7 @@
 				66A0B84C269E5E1F009F9933 /* Protocol+Enum.swift in Sources */,
 				667EFE8326B37F7B008EB475 /* CustomUITextField.swift in Sources */,
 				66C1F23D26B1466B0089ADCE /* Member.swift in Sources */,
+				66654372274CD466005F0153 /* StorySendView.swift in Sources */,
 				663CDB742746302800F8538C /* ProfileView.swift in Sources */,
 				66A8883126AEAD1800A5F770 /* XibView.swift in Sources */,
 				66AB9D9C268DB39800F29275 /* SceneDelegate.swift in Sources */,
