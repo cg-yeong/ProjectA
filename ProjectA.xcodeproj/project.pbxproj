@@ -43,8 +43,6 @@
 		66654378274E15C0005F0153 /* StorySendViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654377274E15C0005F0153 /* StorySendViewModel+.swift */; };
 		6665437A274E163A005F0153 /* StorySendView+bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66654379274E163A005F0153 /* StorySendView+bind.swift */; };
 		6665437C274E1657005F0153 /* SendStoryView+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665437B274E1657005F0153 /* SendStoryView+Text.swift */; };
-		66654381274E172E005F0153 /* StoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66654380274E172E005F0153 /* StoryListView.xib */; };
-		66654384274E2075005F0153 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66654383274E2075005F0153 /* StoryCell.xib */; };
 		6666C3972744F42E00746183 /* BroadCast+bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666C3962744F42E00746183 /* BroadCast+bind.swift */; };
 		6666C3A42746114C00746183 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6666C3A32746114C00746183 /* ProfileView.xib */; };
 		667EFE8126B25759008EB475 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667EFE8026B25759008EB475 /* Register.swift */; };
@@ -155,8 +153,6 @@
 		66654377274E15C0005F0153 /* StorySendViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorySendViewModel+.swift"; sourceTree = "<group>"; };
 		66654379274E163A005F0153 /* StorySendView+bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorySendView+bind.swift"; sourceTree = "<group>"; };
 		6665437B274E1657005F0153 /* SendStoryView+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SendStoryView+Text.swift"; sourceTree = "<group>"; };
-		66654380274E172E005F0153 /* StoryListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryListView.xib; sourceTree = "<group>"; };
-		66654383274E2075005F0153 /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		6666C3962744F42E00746183 /* BroadCast+bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BroadCast+bind.swift"; sourceTree = "<group>"; };
 		6666C3A32746114C00746183 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		667EFE8026B25759008EB475 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -316,8 +312,6 @@
 		6665436E274CCDA8005F0153 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				66654382274E2069005F0153 /* Cell */,
-				66654380274E172E005F0153 /* StoryListView.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -348,14 +342,6 @@
 				66654375274DDB3B005F0153 /* StorySendModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		66654382274E2069005F0153 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				66654383274E2075005F0153 /* StoryCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		6666C3982744F67400746183 /* View */ = {
@@ -765,9 +751,7 @@
 				66297D0026CCC25300A0F334 /* an_like_03.webp in Resources */,
 				6665436627477826005F0153 /* SystemCell.xib in Resources */,
 				66297D0126CCC25300A0F334 /* an_like_04.webp in Resources */,
-				66654381274E172E005F0153 /* StoryListView.xib in Resources */,
 				66297D0226CCC25300A0F334 /* an_like_05.webp in Resources */,
-				66654384274E2075005F0153 /* StoryCell.xib in Resources */,
 				66E78940269C44D9002EF1B6 /* Story.storyboard in Resources */,
 				66A7BDAB26B8C8E9004F56EE /* Message.xib in Resources */,
 				66AB9DA6268DB39A00F29275 /* LaunchScreen.storyboard in Resources */,
