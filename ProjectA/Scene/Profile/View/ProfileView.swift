@@ -36,7 +36,9 @@ class ProfileView: XibView {
     @IBOutlet weak var total_label: UILabel!
     @IBOutlet weak var totalImage_view: UIView!
     
-    @IBOutlet weak var more_button: UIButton!
+    @IBOutlet weak var send: UIButton!
+    @IBOutlet weak var list: UIButton!
+    
     
     @IBOutlet weak var photo_view: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -140,6 +142,34 @@ class ProfileView: XibView {
                 self.addSubview(photoView)
             }.disposed(by: bag)
         
+        send.rx.tap
+            .bind { _ in
+                guard let memInfo = self.memInfo else { return }
+                let sendView = StorySendView()
+                sendView.frame = self.bounds
+                sendView.viewData = JSON(memInfo)
+                self.addSubview(sendView)
+            }.disposed(by: bag)
+        
+        list.rx.tap
+            .bind { _ in
+                guard let memInfo = self.memInfo else { return }
+
+//                guard let vc = App.visibleViewController() else { return }
+//                let sb = UIStoryboard(name: "Story", bundle: nil)
+//                guard let storyListVC = sb.instantiateViewController(withIdentifier: "StoryListViewController") as? StoryListViewController else {
+//                    return
+//                }
+//                storyListVC.paging()
+//                storyListVC.modalPresentationStyle = .overFullScreen
+//
+//                vc.present(storyListVC, animated: true, completion: nil)
+                
+                let listView = StoryListView()
+                listView.frame = self.bounds
+                listView.viewData = JSON(memInfo)
+                self.addSubview(listView)
+            }.disposed(by: bag)
     }
 }
 

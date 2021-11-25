@@ -95,10 +95,12 @@ class StoryListViewController: UIViewController, UITableViewDelegate {
                 let decoder = JSONDecoder()
                 do {
                     let moreList = try decoder.decode(StoryList.self, from: data)
+                    print("JSON - StoryList 구조 : ", moreList)
                     if moreList.currentPage <= moreList.totalPage {
                         print("현재페이지:\(moreList.currentPage), 전체페이지:\(moreList.totalPage)")
                     }
                     storyListData.append(contentsOf: moreList.list)
+                    print("JSON - List 구조 : ", moreList.list)
                     hasNextpage = moreList.currentPage < moreList.totalPage ? true : false
                     isPaging = false
                     storyListTableView.reloadData()

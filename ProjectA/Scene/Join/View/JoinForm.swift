@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class JoinForm: XibView {
     
@@ -50,6 +51,8 @@ class JoinForm: XibView {
     static var formViewOriginY = CGFloat(0)
     let joinButtonGradient: CAGradientLayer = CAGradientLayer()
     let imagePicker = UIImagePickerController()
+    
+    let bag = DisposeBag()
     
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -11,14 +11,14 @@ import RxCocoa
 
 extension JoinForm {
     
-    func bind() {
-
-        quitButton.rx.tap
-            .bind { (_) in
-                self.exitAlert()
-            }.disposed(by: bag)
-
-    }
+//    func bind() {
+//
+//        quitButton.rx.tap
+//            .bind { (_) in
+//                self.exitAlert()
+//            }.disposed(by: bag)
+//
+//    }
 
 
 

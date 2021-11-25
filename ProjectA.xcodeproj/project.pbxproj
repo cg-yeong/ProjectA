@@ -74,6 +74,8 @@
 		66C140B7274F14A40052A48E /* StoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66C140B6274F14A40052A48E /* StoryListCell.xib */; };
 		66C140B9274F213B0052A48E /* StoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C140B8274F213B0052A48E /* StoryListView.swift */; };
 		66C140BB274F21DE0052A48E /* StoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C140BA274F21DE0052A48E /* StoryListCell.swift */; };
+		66C140BD274F43A80052A48E /* StoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C140BC274F43A80052A48E /* StoryListViewModel.swift */; };
+		66C140BF274F44B90052A48E /* StoryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C140BE274F44B90052A48E /* StoryListModel.swift */; };
 		66C1F22326AFE6840089ADCE /* JoinForm+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1F22226AFE6840089ADCE /* JoinForm+Picker.swift */; };
 		66C1F22B26B0139A0089ADCE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1F22A26B0139A0089ADCE /* App.swift */; };
 		66C1F22D26B014880089ADCE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1F22C26B014880089ADCE /* Toast.swift */; };
@@ -194,6 +196,8 @@
 		66C140B6274F14A40052A48E /* StoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryListCell.xib; sourceTree = "<group>"; };
 		66C140B8274F213B0052A48E /* StoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListView.swift; sourceTree = "<group>"; };
 		66C140BA274F21DE0052A48E /* StoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListCell.swift; sourceTree = "<group>"; };
+		66C140BC274F43A80052A48E /* StoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewModel.swift; sourceTree = "<group>"; };
+		66C140BE274F44B90052A48E /* StoryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListModel.swift; sourceTree = "<group>"; };
 		66C1F22226AFE6840089ADCE /* JoinForm+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinForm+Picker.swift"; sourceTree = "<group>"; };
 		66C1F22A26B0139A0089ADCE /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		66C1F22C26B014880089ADCE /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				66C140B4274F0A070052A48E /* StoryListView.xib */,
 				66C140B6274F14A40052A48E /* StoryListCell.xib */,
 				66C140B8274F213B0052A48E /* StoryListView.swift */,
+				66C140BC274F43A80052A48E /* StoryListViewModel.swift */,
+				66C140BE274F44B90052A48E /* StoryListModel.swift */,
 				66C140BA274F21DE0052A48E /* StoryListCell.swift */,
 			);
 			path = List;
@@ -923,8 +929,10 @@
 				66EF9C0826C207E00082109E /* Broadcast+Cell.swift in Sources */,
 				669EFADA2696D49C000C4DC3 /* DetailPictureCell.swift in Sources */,
 				66654376274DDB3B005F0153 /* StorySendModel.swift in Sources */,
+				66C140BD274F43A80052A48E /* StoryListViewModel.swift in Sources */,
 				66E78950269C49D9002EF1B6 /* StorySendViewController.swift in Sources */,
 				66654378274E15C0005F0153 /* StorySendViewModel+.swift in Sources */,
+				66C140BF274F44B90052A48E /* StoryListModel.swift in Sources */,
 				669EFADB2696D49C000C4DC3 /* PictureCell.swift in Sources */,
 				669EFAD2269565A0000C4DC3 /* DetailCollectionViewController.swift in Sources */,
 				663CDB78274635E200F8538C /* ProfileImageCell.swift in Sources */,
