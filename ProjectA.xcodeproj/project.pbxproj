@@ -70,6 +70,10 @@
 		66B4F4BD26C4E83900DC248C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4F4BC26C4E83900DC248C /* Animation.swift */; };
 		66B4F4C226CA466100DC248C /* Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4F4C126CA466100DC248C /* Chatting.swift */; };
 		66B4F4C426CA47BF00DC248C /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4F4C326CA47BF00DC248C /* Social.swift */; };
+		66C140B5274F0A070052A48E /* StoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66C140B4274F0A070052A48E /* StoryListView.xib */; };
+		66C140B7274F14A40052A48E /* StoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66C140B6274F14A40052A48E /* StoryListCell.xib */; };
+		66C140B9274F213B0052A48E /* StoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C140B8274F213B0052A48E /* StoryListView.swift */; };
+		66C140BB274F21DE0052A48E /* StoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C140BA274F21DE0052A48E /* StoryListCell.swift */; };
 		66C1F22326AFE6840089ADCE /* JoinForm+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1F22226AFE6840089ADCE /* JoinForm+Picker.swift */; };
 		66C1F22B26B0139A0089ADCE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1F22A26B0139A0089ADCE /* App.swift */; };
 		66C1F22D26B014880089ADCE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1F22C26B014880089ADCE /* Toast.swift */; };
@@ -186,6 +190,10 @@
 		66B4F4BC26C4E83900DC248C /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		66B4F4C126CA466100DC248C /* Chatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatting.swift; sourceTree = "<group>"; };
 		66B4F4C326CA47BF00DC248C /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		66C140B4274F0A070052A48E /* StoryListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryListView.xib; sourceTree = "<group>"; };
+		66C140B6274F14A40052A48E /* StoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryListCell.xib; sourceTree = "<group>"; };
+		66C140B8274F213B0052A48E /* StoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListView.swift; sourceTree = "<group>"; };
+		66C140BA274F21DE0052A48E /* StoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListCell.swift; sourceTree = "<group>"; };
 		66C1F22226AFE6840089ADCE /* JoinForm+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinForm+Picker.swift"; sourceTree = "<group>"; };
 		66C1F22A26B0139A0089ADCE /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		66C1F22C26B014880089ADCE /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -312,6 +320,10 @@
 		6665436E274CCDA8005F0153 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				66C140B4274F0A070052A48E /* StoryListView.xib */,
+				66C140B6274F14A40052A48E /* StoryListCell.xib */,
+				66C140B8274F213B0052A48E /* StoryListView.swift */,
+				66C140BA274F21DE0052A48E /* StoryListCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -751,6 +763,7 @@
 				66297D0026CCC25300A0F334 /* an_like_03.webp in Resources */,
 				6665436627477826005F0153 /* SystemCell.xib in Resources */,
 				66297D0126CCC25300A0F334 /* an_like_04.webp in Resources */,
+				66C140B5274F0A070052A48E /* StoryListView.xib in Resources */,
 				66297D0226CCC25300A0F334 /* an_like_05.webp in Resources */,
 				66E78940269C44D9002EF1B6 /* Story.storyboard in Resources */,
 				66A7BDAB26B8C8E9004F56EE /* Message.xib in Resources */,
@@ -768,6 +781,7 @@
 				66654362274769C7005F0153 /* ChatCell.xib in Resources */,
 				6666C3A42746114C00746183 /* ProfileView.xib in Resources */,
 				66352F0026A94FCD00469EE4 /* MiniProfile.storyboard in Resources */,
+				66C140B7274F14A40052A48E /* StoryListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,8 +941,10 @@
 				66A0902626AF929E000EE259 /* JoinForm+Text.swift in Sources */,
 				6666C3972744F42E00746183 /* BroadCast+bind.swift in Sources */,
 				66654374274CE1E7005F0153 /* StorySendViewModel.swift in Sources */,
+				66C140B9274F213B0052A48E /* StoryListView.swift in Sources */,
 				66352F0626A97B7F00469EE4 /* VC+NaverAuth.swift in Sources */,
 				6665436827477937005F0153 /* SystemCell.swift in Sources */,
+				66C140BB274F21DE0052A48E /* StoryListCell.swift in Sources */,
 				66A0902B26AFCD1B000EE259 /* JoinForm+Image.swift in Sources */,
 				66E7EEEB26943F5E00816354 /* DetailPictureViewController.swift in Sources */,
 				66C1F22326AFE6840089ADCE /* JoinForm+Picker.swift in Sources */,
