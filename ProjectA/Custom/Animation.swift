@@ -12,7 +12,7 @@ import SDWebImageWebPCoder
 
 class LottieAnime {
     
-    func heartAnimation() {
+    static func heartAnimation() {
         
         // webp
         var alterHearts: [String] = []

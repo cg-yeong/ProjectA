@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Lottie
+import SocketIO
 
 class Broadcast: UIViewController {
     
@@ -32,32 +33,33 @@ class Broadcast: UIViewController {
         return view
     }()
     
-    let socket = SocketManage()
+    lazy var blurForChat: CAGradientLayer = {
+        let layer = CAGradientLayer()
+        return layer
+    }()
+    
+//    var sioManager: SocketManager!
+    
+    var viewModel: BroadCastViewModel!
+    
     var liveChat = [Chat]()
     let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        bind()
         setCollectionView()
         setTextView()
-        bind()
-        socket.rcv()
-//        socket.rcv { data in
-//            guard let chatData = data as? Chat else {
-//                return
-//            }
-//            self.liveChat.insert(chatData, at: 0)
-//            self.msgCollectionView.reloadData()
-//            self.msgCollectionView.layoutIfNeeded()
-//        }
+        
+        
     }
     
     // set
     func setView() {
         msgView.cornerRadius = 18
         msgView.clipsToBounds = true
-        setBlur()
+//        setBlur(clear: false)
         setLikeLottie()
         likeButton.isEnabled = true
         likeBtnAnimation(true)
@@ -67,25 +69,34 @@ class Broadcast: UIViewController {
         super.viewDidLayoutSubviews()
     }
     
-    private func setBlur() {
+    internal func setBlur(clear: Bool) {
         if let containerView = msgCollectionView.superview {
-            let grad = CAGradientLayer(layer: containerView.layer)
-            //            grad.frame = containerView.bounds
-            grad.frame = CGRect(origin: .zero, size: CGSize(width: containerView.bounds.width, height: view.bounds.height))
             
-            grad.colors = [ UIColor.clear.cgColor, UIColor.black.cgColor ]
-            grad.startPoint = CGPoint(x: 0, y: 0)
-            grad.endPoint = CGPoint(x: 0, y: 1)
-            grad.locations = [0, 0.1]
-            containerView.layer.mask = grad
+            let grad = CAGradientLayer(layer: containerView.layer)
+            if clear {
+                grad.frame = liveView.bounds
+                grad.colors = [ UIColor.clear.cgColor, UIColor.black.cgColor ]
+                grad.startPoint = CGPoint(x: 0, y: 0)
+                grad.endPoint = CGPoint(x: 0, y: 1)
+                grad.locations = [0, 0.0]
+                containerView.layer.mask = grad
+            } else {
+                grad.frame = liveView.bounds//CGRect(origin: .zero, size: CGSize(width: containerView.bounds.width, height: view.bounds.height))
+
+                grad.colors = [ UIColor.clear.cgColor, UIColor.black.cgColor ]
+                grad.startPoint = CGPoint(x: 0, y: 0)
+                grad.endPoint = CGPoint(x: 0, y: 1)
+                grad.locations = [0, 0.1]
+                containerView.layer.mask = grad
+            }
         }
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        socket.reqRoomOut()
-        socket.disconn()
+//        socket.reqRoomOut()
+//        socket.disconn()
         print("Live 방송VC deinit")
         view.removeFromSuperview()
     }

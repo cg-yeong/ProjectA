@@ -13,94 +13,81 @@ import Lottie
 extension Broadcast {
     
     func bind() {
+
         let screenTap = UITapGestureRecognizer()
         view.addGestureRecognizer(screenTap)
         
-        screenTap.rx.event
-            .bind { (_) in
-                if !self.sendButton.isHidden {
-                    self.sendButton.isHidden = true
-                }
-                self.view.endEditing(true)
+        let input = BroadCastViewModel.Inputs(text: msgTextView.rx.text.orEmpty.map { $0 },
+                                              send: sendButton.rx.tap.map { _ in },
+                                              scrollDown: scrollButton.rx.tap.map { _ in },
+                                              close_tap: closeButton.rx.tap.map { _ in },
+                                              screen_tap: screenTap.rx.event.map { _ in })
+        viewModel = BroadCastViewModel(input)
+        
+        viewModel.text
+            .distinctUntilChanged()
+            .drive { [weak self] in
+                guard let self = self else { return }
+                self.msgTextView.text = $0
             }.disposed(by: bag)
         
+        viewModel.text
+            .map { !$0.isEmpty }
+            .drive { [weak self] in
+                guard let self = self else { return }
+                self.msgPlaceholder.isHidden = $0
+            }.disposed(by: bag)
         
-        closeButton.rx.tap
-            .bind { (_) in
-                self.socket.disconn()
+        viewModel.keyboardDown
+            .drive { [weak self] _ in
+                guard let self = self else { return }
+                self.view.endEditing(true)
+                self.sendButton.isHidden = true
+            }.disposed(by: bag)
+        
+        viewModel.removeFromSuperview
+            .drive { [weak self] _ in
+                guard let self = self else { return }
                 self.dismiss(animated: true, completion: nil)
             }.disposed(by: bag)
         
-        sendButton.rx.tap
-            .bind { (_) in
-                self.sendChatMessage()
-            }.disposed(by: bag)
-        
         likeButton.rx.tap
-            .bind { (_) in
-                self.likeEvent()
-            }.disposed(by: bag)
-        
-        scrollButton.rx.tap
-            .bind { (_) in
-                self.scrollToBottom()
-            }.disposed(by: bag)
-        
-        msgTextView.rx.text.orEmpty
-            .distinctUntilChanged()
-            .map({ $0.isEmpty })
-            .map({ !$0 })
-            .bind(to: msgPlaceholder.rx.isHidden)
+            .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
+            .bind { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.sendLikeEvent {
+                    self.likeButton.isEnabled = false
+                    self.likeBtnAnimation(false)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                        self.likeButton.isEnabled = true
+                        self.likeBtnAnimation(true)
+                    }
+                }
+            }
             .disposed(by: bag)
         
         msgCollectionView.rx.contentOffset
-            .map({ $0.y > 0 })
-            .map({ !$0 })
+            .distinctUntilChanged()
+            .map({ _ in
+                self.msgCollectionView.contentOffset.y <= 0
+            })
             .bind(to: scrollButton.rx.isHidden)
             .disposed(by: bag)
-    }
-    
-    
-    @objc func sendChatMessage() {
-        let chatText = msgTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !chatText.isEmpty else {
-            Toast.show("채팅을 입력해주세요.")
-            return
-        }
-        socket.sendChat(text: chatText)
-        msgTextView.text = ""
-    }
-
-    func likeEvent() {
-        socket.sendLike()
         
-        likeButton.isEnabled = false
-        likeBtnAnimation(false)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.likeButton.isEnabled = true
-            self.likeBtnAnimation(true)
-        }
-    }
-    
-    
-    /* 좋아요 로티 처음 세팅 */
-    func setLikeLottie() {
-        likeBtnLottie = AnimationView(name: "ani_live_like_full")
+        viewModel.scrollDown
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.scrollToBottom()
+            })
+            .disposed(by: bag)
         
-        likeBtnLottie.frame = likeButton.bounds
-        likeBtnLottie.contentMode = .scaleAspectFit
-        likeBtnLottie.isUserInteractionEnabled = false
-        likeBtnLottie.loopMode = .playOnce
-        likeBtnLottie.tag = 300
-        self.likeButton.addSubview(likeBtnLottie)
+//        scrollButton.rx.tap
+//            .bind { (_) in
+//                self.scrollToBottom()
+//            }.disposed(by: bag)
         
     }
     
-    @objc func likeBtnAnimation(_ on: Bool) {
-        guard on else {
-            likeBtnLottie.stop()
-            return
-        }
-        likeBtnLottie.play()
-    }
+    
+    
 }

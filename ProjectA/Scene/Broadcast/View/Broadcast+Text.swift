@@ -25,7 +25,7 @@ extension Broadcast: UITextViewDelegate {
    
     
     @objc func keyboardWillShow(_ sender: Notification) {
-        
+        viewModel.editing(true)
         if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
             if let window = UIApplication.shared.keyWindow {
@@ -41,6 +41,7 @@ extension Broadcast: UITextViewDelegate {
         }
     }
     @objc func keyboardWillHide(_ sender: Notification) {
+        viewModel.editing(false)
         keyboardConstraint.constant = 0
         self.view.layoutIfNeeded()
     }

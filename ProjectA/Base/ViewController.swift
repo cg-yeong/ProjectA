@@ -86,10 +86,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
         chatVC.modalPresentationStyle = .fullScreen
         chatVC.modalTransitionStyle = .crossDissolve
         
-        chatVC.socket.conn()
-        chatVC.socket.socket.on(clientEvent: .connect) { (dataArr, ack) in
-            chatVC.socket.reqRoomEnter()
-        }
+//        chatVC.socket.conn()
+//        chatVC.viewModel.socket.conn()
+//        chatVC.socket.socket.on(clientEvent: .connect) { (dataArr, ack) in
+//            chatVC.socket.reqRoomEnter()
+//        }
         
         self.present(chatVC, animated: true, completion: nil)
         
@@ -119,18 +120,18 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     self.rest.memberREST(email: user!) { member in
                         let memInfo = member?.mem_info
                         
-//                        let miniProfileSB = UIStoryboard(name: "MiniProfile", bundle: nil)
-//                        guard let miniProfileVC = miniProfileSB.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
-//
-//                        miniProfileVC.MemInfoWithList = memInfo
-//                        miniProfileVC.modalPresentationStyle = .overFullScreen
-//                        self.present(miniProfileVC, animated: true, completion: nil)
+                        let miniProfileSB = UIStoryboard(name: "MiniProfile", bundle: nil)
+                        guard let miniProfileVC = miniProfileSB.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+
+                        miniProfileVC.MemInfoWithList = memInfo
+                        miniProfileVC.modalPresentationStyle = .overFullScreen
+                        self.present(miniProfileVC, animated: true, completion: nil)
                         
-                        guard let vc = App.visibleViewController() else { return }
-                        let profileView = ProfileView()
-                        profileView.frame = vc.view.bounds
-                        profileView.memInfo = memInfo
-                        self.view.addSubview(profileView)
+//                        guard let vc = App.visibleViewController() else { return }
+//                        let profileView = ProfileView()
+//                        profileView.frame = vc.view.bounds
+//                        profileView.memInfo = memInfo
+//                        self.view.addSubview(profileView)
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.wkWebView.isUserInteractionEnabled = true

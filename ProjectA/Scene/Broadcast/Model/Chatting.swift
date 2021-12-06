@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct Chat {
     var cmd: String?
     var msg: String?
-    var from: [String : Any]?
+    var from: [String : JSON]?
+    
+    var action: (() -> Void)?
 }
