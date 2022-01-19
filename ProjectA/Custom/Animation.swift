@@ -19,7 +19,7 @@ class LottieAnime {
         //alterHearts = ["an_like_01","an_like_02","an_like_03","an_like_04","an_like_05","an_like_01","an_like_02"]
         
         guard let vc = App.visibleViewController() as? Broadcast else { return }
-        
+        vc.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapHeart)))
         (0...6).forEach { (i) in
             alterHearts.append("an_like_0\(Int.random(in: 1 ... 5))")
             let heartImgNm = alterHearts[i]
@@ -29,8 +29,8 @@ class LottieAnime {
             }
             print(path)
             let heartImgView = UIImageView(image: UIImage(contentsOfFile: path))
-//            let heartImgView = UIImageView()
-//            heartImgView.sd_setImage(with: URL(string: path))
+//            let heartImgView2 = UIImageView().sd_setImage(with: URL(string: path))
+            heartImgView.sd_setImage(with: URL(string: path))
             heartImgView.alpha = 0
             
             let totalDuration = Double(CGFloat.random(in: 5.5 ... 6.0))
@@ -87,6 +87,30 @@ class LottieAnime {
         
     }
    
+    
+    @objc fileprivate func handleTapHeart(gesture: UITapGestureRecognizer) {
+        guard let vc = App.visibleViewController() as? Broadcast else { return }
+        let location = gesture.location(in: vc.view)
+        
+        for v in vc.view.subviews {
+            guard let heartLocation = v.layer.presentation()?.frame else { return }
+            
+            if heartLocation.contains(location) {
+                let heartImageView = v as! UIImageView
+                heartPop(heartImageView: heartImageView)
+            }
+        }
+    }
+    
+    fileprivate func heartPop(heartImageView: UIImageView) {
+        heartImageView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 3.0, options: .allowUserInteraction, animations: {
+            heartImageView.transform = CGAffineTransform(scaleX: 2, y: 2)
+        }) { _ in
+            heartImageView.alpha = 0
+        }
+    }
 }
 
 

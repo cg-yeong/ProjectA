@@ -68,4 +68,13 @@ extension UIView{
         }, completion: completion)
     }
     
+    func animateLeft(_ duration: TimeInterval = 0.5, delay: Double = 0, completion: ((Bool) -> Void)? = nil) {
+        self.frame.origin.x = self.bounds.width
+        UIView.animate(withDuration: duration, delay: delay, options: [.curveEaseIn], animations: {
+            self.frame.origin.x = 0
+        }, completion: completion)
+        self.isHidden = false
+    }
+    
+    
 }

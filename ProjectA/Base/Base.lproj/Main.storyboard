@@ -33,18 +33,27 @@
                                     <action selector="showMMiniProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Tj-b4-ma4"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7B9-L1-aAk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.23050533067311668" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7B9-L1-aAk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BrM-5L-9L7"/>
+                            <constraint firstAttribute="bottom" secondItem="7B9-L1-aAk" secondAttribute="bottom" id="PPQ-KP-8ih"/>
                             <constraint firstItem="YJi-nW-QTB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Sxd-A9-eWh"/>
                             <constraint firstItem="twi-gl-Mlv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZqW-N5-48g"/>
+                            <constraint firstItem="7B9-L1-aAk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gyp-MY-3qv"/>
                             <constraint firstItem="twi-gl-Mlv" firstAttribute="top" secondItem="YJi-nW-QTB" secondAttribute="bottom" constant="36.5" id="gzg-U3-qEX"/>
+                            <constraint firstAttribute="trailing" secondItem="7B9-L1-aAk" secondAttribute="trailing" id="hlC-y1-mZ4"/>
                             <constraint firstItem="YJi-nW-QTB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x5e-Jz-os0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="manprofileButton" destination="YJi-nW-QTB" id="tLL-dK-OWJ"/>
+                        <outlet property="webContainerView" destination="7B9-L1-aAk" id="8as-wr-uzT"/>
                         <outlet property="womanprofileButton" destination="twi-gl-Mlv" id="x53-wd-Yvr"/>
                     </connections>
                 </viewController>

@@ -74,12 +74,7 @@ class Broadcast: UIViewController {
             
             let grad = CAGradientLayer(layer: containerView.layer)
             if clear {
-                grad.frame = liveView.bounds
-                grad.colors = [ UIColor.clear.cgColor, UIColor.black.cgColor ]
-                grad.startPoint = CGPoint(x: 0, y: 0)
-                grad.endPoint = CGPoint(x: 0, y: 1)
-                grad.locations = [0, 0.0]
-                containerView.layer.mask = grad
+                containerView.layer.mask = nil
             } else {
                 grad.frame = liveView.bounds//CGRect(origin: .zero, size: CGSize(width: containerView.bounds.width, height: view.bounds.height))
 
