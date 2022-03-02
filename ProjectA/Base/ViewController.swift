@@ -21,6 +21,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var manprofileButton: UIButton!
     @IBOutlet weak var womanprofileButton: UIButton!
+    @IBOutlet weak var webContainerView: UIView!
     
     var photoURLs = [String]()
     var setInfo: MemberAndPhoto?
@@ -36,7 +37,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         wkWebView = WKWebView()
         wkWebView?.frame = UIScreen.main.bounds
-        self.view.addSubview(wkWebView!)
+        self.webContainerView.addSubview(wkWebView!)
         
         wkWebView.navigationDelegate = self
         
@@ -47,6 +48,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         wkWebView.load(request)
         
         registerBridge()
+        starShotBtn()
     }
     
     
@@ -59,6 +61,30 @@ class ViewController: UIViewController, WKNavigationDelegate {
         print("VC deinit")
     }
     
+    func starShotBtn() {
+        let mChatBtn = UIButton()
+        mChatBtn.setTitle("스타샷", for: .normal)
+        mChatBtn.backgroundColor = .black
+        mChatBtn.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(mChatBtn)
+        let safeArea = view.safeAreaLayoutGuide
+        
+        mChatBtn.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20).isActive = true
+        mChatBtn.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
+        mChatBtn.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        mChatBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        mChatBtn.addTarget(self, action: #selector(openStarShot), for: .touchUpInside)
+    }
+    @objc func openStarShot() {
+        print("슷탓샷 버튼")
+        guard let vc = App.visibleViewController() else { return }
+        let starShot = StarShot()
+        starShot.frame = vc.view.bounds
+        
+        self.view.addSubview(starShot)
+    }
     
     func createChatButton() {
         let chatBtn = UIButton()
@@ -86,10 +112,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
         chatVC.modalPresentationStyle = .fullScreen
         chatVC.modalTransitionStyle = .crossDissolve
         
-        chatVC.socket.conn()
-        chatVC.socket.socket.on(clientEvent: .connect) { (dataArr, ack) in
-            chatVC.socket.reqRoomEnter()
-        }
+//        chatVC.socket.conn()
+//        chatVC.viewModel.socket.conn()
+//        chatVC.socket.socket.on(clientEvent: .connect) { (dataArr, ack) in
+//            chatVC.socket.reqRoomEnter()
+//        }
         
         self.present(chatVC, animated: true, completion: nil)
         
@@ -119,18 +146,18 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     self.rest.memberREST(email: user!) { member in
                         let memInfo = member?.mem_info
                         
-//                        let miniProfileSB = UIStoryboard(name: "MiniProfile", bundle: nil)
-//                        guard let miniProfileVC = miniProfileSB.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
-//
-//                        miniProfileVC.MemInfoWithList = memInfo
-//                        miniProfileVC.modalPresentationStyle = .overFullScreen
-//                        self.present(miniProfileVC, animated: true, completion: nil)
+                        let miniProfileSB = UIStoryboard(name: "MiniProfile", bundle: nil)
+                        guard let miniProfileVC = miniProfileSB.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+
+                        miniProfileVC.MemInfoWithList = memInfo
+                        miniProfileVC.modalPresentationStyle = .overFullScreen
+                        self.present(miniProfileVC, animated: true, completion: nil)
                         
-                        guard let vc = App.visibleViewController() else { return }
-                        let profileView = ProfileView()
-                        profileView.frame = vc.view.bounds
-                        profileView.memInfo = memInfo
-                        self.view.addSubview(profileView)
+//                        guard let vc = App.visibleViewController() else { return }
+//                        let profileView = ProfileView()
+//                        profileView.frame = vc.view.bounds
+//                        profileView.memInfo = memInfo
+//                        self.view.addSubview(profileView)
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.wkWebView.isUserInteractionEnabled = true
